@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				margin: 0;
+			}
+			#div1,#div2{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#div2{
+				color: pink;
+				width: 15px;
+				height: 21px;
+				overflow: hidden;
+			}
+			#div2 span{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 2000px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1"><span>好好学习天天向上好好学习天天向上</span></div>
+		<div id="div2"><span>好好学习天天向上好好学习天天向上</span></div>
+		<script>
+			var div2Span = div2.getElementsByTagName("span")[0];
+			setInterval(function(){
+				if( div2.offsetLeft < div1.offsetWidth ){
+					div2.style.left = div2.offsetLeft + 1 + "px";
+					div2Span.style.left = -div2.offsetLeft + "px";
+				}else{
+					div2.style.left = "0px";
+					div2Span.style.left = "0px";
+				}
+			},30)
+		</script>
+	</body>
+</html>
